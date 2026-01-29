@@ -44,7 +44,6 @@ export class TodoApp {
     this.cacheDOMElements();
     this.loadFromStorage();
     this.setupRenderer();
-    this.setupModal();
     this.setupEventListeners();
     this.setupKeyboardShortcuts();
     this.render();
@@ -63,8 +62,10 @@ export class TodoApp {
       taskCountEl: document.getElementById("taskCount"),
       themeToggle: document.getElementById("themeToggle"),
       searchBtn: document.getElementById("searchBtn"),
+      searchContainer: document.getElementById("searchContainer"),
       searchInput: document.getElementById("searchInput"),
-      closeSearch: document.getElementById("closeSearch"),
+      clearSearchBtn: document.getElementById("clearSearch"),
+      closeSearchBtn: document.getElementById("closeSearch"),
     };
   }
 
@@ -73,13 +74,6 @@ export class TodoApp {
    */
   setupRenderer() {
     this.renderer = new TodoRenderer(this.elements.todoList);
-  }
-
-  /**
-   * Setup search modal
-   */
-  setupModal() {
-    this.searchModal = new Modal("#searchModal");
   }
 
   /**
@@ -112,15 +106,29 @@ export class TodoApp {
       this.toggleTheme(),
     );
 
-    // Search
-    this.elements.searchBtn.addEventListener("click", () => this.openSearch());
-    this.elements.closeSearch.addEventListener("click", () =>
-      this.closeSearch(),
+    // Search button - toggle search bar
+    this.elements.searchBtn.addEventListener("click", () =>
+      this.toggleSearchBar(),
     );
+
+    // Search input
     this.elements.searchInput.addEventListener("input", (e) => {
       this.searchQuery = e.target.value;
       this.render();
     });
+
+    // Clear search button
+    this.elements.clearSearchBtn.addEventListener("click", () => {
+      this.elements.searchInput.value = "";
+      this.searchQuery = "";
+      this.render();
+      this.elements.searchInput.focus();
+    });
+
+    // Close search button
+    this.elements.closeSearchBtn.addEventListener("click", () =>
+      this.closeSearchBar(),
+    );
   }
 
   /**
@@ -146,13 +154,28 @@ export class TodoApp {
         this.toggleTheme();
       }
 
-      // Escape: Clear input or close search
+      // Escape: Close search or clear input
       if (e.key === KEYBOARD_SHORTCUTS.ESCAPE) {
-        if (this.searchModal.isOpen) {
-          this.closeSearch();
+        if (this.elements.searchContainer.classList.contains("active")) {
+          this.closeSearchBar();
         } else {
           this.elements.todoInput.value = "";
         }
+      }
+
+      // Forward slash (/): Focus search
+      if (
+        e.key === "/" &&
+        !this.elements.searchInput.contains(document.activeElement)
+      ) {
+        e.preventDefault();
+        this.openSearchBar();
+      }
+
+      // Ctrl/Cmd + K: Toggle search
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        this.toggleSearchBar();
       }
     });
   }
@@ -289,26 +312,39 @@ export class TodoApp {
       isDark ? MESSAGES.DARK_MODE_ENABLED : MESSAGES.DARK_MODE_DISABLED,
     );
   }
-
   /**
-   * Open search modal
+   * Toggle search bar visibility
    */
-  openSearch() {
-    this.searchModal.open();
+  toggleSearchBar() {
+    if (this.elements.searchContainer.classList.contains("active")) {
+      this.closeSearchBar();
+    } else {
+      this.openSearchBar();
+    }
+  }
+  /**
+   * Open search bar with animation
+   */
+  openSearchBar() {
+    this.elements.searchContainer.classList.add("active");
     this.elements.searchInput.focus();
     this.elements.searchInput.select();
   }
 
   /**
-   * Close search modal
+   * Close search bar with animation
    */
-  closeSearch() {
-    this.searchModal.close();
-    this.searchQuery = "";
+  closeSearchBar() {
+    this.elements.searchContainer.classList.remove("active");
     this.elements.searchInput.value = "";
+    this.searchQuery = "";
     this.render();
-  }
 
+    // Return focus to task input
+    setTimeout(() => {
+      this.elements.todoInput.focus();
+    }, 300);
+  }
   /**
    * Update filter button active states
    */
