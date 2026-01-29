@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#f5f7fa"/>
+  
+  <!-- Header -->
+  <rect x="100" y="50" width="1080" height="80" fill="#667eea" rx="20"/>
+  <text x="640" y="105" font-family="Arial" font-size="48" fill="white" text-anchor="middle" font-weight="bold">Todo List</text>
+  
+  <!-- Input Section -->
+  <rect x="100" y="180" width="1080" height="100" fill="white" rx="40" stroke="#e2e8f0" stroke-width="4"/>
+  <rect x="140" y="210" width="800" height="40" fill="#edf2f7" rx="20"/>
+  <rect x="980" y="200" width="160" height="60" fill="#667eea" rx="20"/>
+  <text x="1060" y="240" font-family="Arial" font-size="40" fill="white" text-anchor="middle">+</text>
+  
+  <!-- Filter Buttons -->
+  <rect x="100" y="320" width="340" height="50" fill="#667eea" rx="15"/>
+  <rect x="470" y="320" width="340" height="50" fill="white" rx="15" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="840" y="320" width="340" height="50" fill="white" rx="15" stroke="#e2e8f0" stroke-width="2"/>
+  
+  <!-- Todo Items -->
+  <rect x="100" y="410" width="1080" height="70" fill="white" rx="20" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="100" y="500" width="1080" height="70" fill="white" rx="20" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="100" y="590" width="1080" height="70" fill="white" rx="20" stroke="#e2e8f0" stroke-width="2"/>
+  
+  <text x="640" y="640" font-family="Arial" font-size="28" fill="#718096" text-anchor="middle">Professional Todo List Application</text>
+</svg>
