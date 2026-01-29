@@ -122,21 +122,21 @@
 
 /* Dark Mode Toggle Animation */
 .theme-toggle .icon {
+  width: 24px;
+  height: 24px;
+  display: block;
   transition: opacity var(--transition-fast);
 }
-
-.sun-icon {
-  opacity: 1;
+/* Hide moon icon by default */
+.theme-toggle .moon-icon {
+  display: none;
 }
 
-.moon-icon {
-  opacity: 0;
+/* Show moon icon in dark mode */
+[data-theme="dark"] .theme-toggle .sun-icon {
+  display: none;
 }
 
-[data-theme="dark"] .sun-icon {
-  opacity: 0;
-}
-
-[data-theme="dark"] .moon-icon {
-  opacity: 1;
+[data-theme="dark"] .theme-toggle .moon-icon {
+  display: block;
 }

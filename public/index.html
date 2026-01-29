@@ -93,23 +93,37 @@
         </button>
       </div>
 
-      <!-- Search Modal -->
-      <div id="searchModal" class="search-modal">
-        <div class="search-modal-content">
-          <input
-            type="text"
-            id="searchInput"
-            class="search-input"
-            placeholder="Search tasks..."
-            aria-label="Search tasks"
-          />
-          <button
-            id="closeSearch"
-            class="close-search"
-            aria-label="Close search"
-          >
-            &times;
-          </button>
+      <!-- Search Bar (Inline Animation) -->
+      <div id="searchContainer" class="search-container">
+        <div id="searchBar" class="search-bar">
+          <div class="search-bar-inner">
+            <img
+              src="../src/assets/icons/search.svg"
+              alt=""
+              class="search-icon"
+            />
+            <input
+              type="text"
+              id="searchInput"
+              class="search-input-inline"
+              placeholder="Search tasks... (Press / to focus)"
+              aria-label="Search tasks"
+            />
+            <button
+              id="clearSearch"
+              class="clear-search"
+              aria-label="Clear search"
+            >
+              <span class="clear-icon">×</span>
+            </button>
+            <button
+              id="closeSearch"
+              class="close-search-btn"
+              aria-label="Close search"
+            >
+              <span class="close-icon">ESC</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

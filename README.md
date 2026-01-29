@@ -155,13 +155,15 @@ This creates an optimized dist/ folder ready for deployment.
 
 ## 🎹 Keyboard Shortcuts
 
-| Shortcut       | Action                            |
-| -------------- | --------------------------------- |
-| `Ctrl/Cmd + E` | Focus on input field              |
-| `Ctrl/Cmd + D` | Toggle dark/light mode            |
-| `Enter`        | Add task or confirm search        |
-| `Escape`       | Clear input or close search modal |
-| `Click + Drag` | Reorder tasks                     |
+| Shortcut       | Action                          |
+| -------------- | ------------------------------- |
+| `Ctrl/Cmd + E` | Focus on task input field       |
+| `Ctrl/Cmd + D` | Toggle dark/light mode          |
+| `/`            | Focus on search field           |
+| `Ctrl/Cmd + K` | Toggle search bar               |
+| `Enter`        | Add task or confirm search      |
+| `Escape`       | Close search bar or clear input |
+| `Click + Drag` | Reorder tasks                   |
 
 ## 📱 PWA Installation
 
