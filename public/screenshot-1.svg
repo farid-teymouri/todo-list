@@ -1,25 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
-  <rect width="1280" height="720" fill="#f5f7fa"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#f5f7fa"/>
   
   <!-- Header -->
-  <rect x="100" y="50" width="1080" height="80" fill="#667eea" rx="20"/>
-  <text x="640" y="105" font-family="Arial" font-size="48" fill="white" text-anchor="middle" font-weight="bold">Todo List</text>
+  <rect x="62.5" y="31.25" width="675" height="50" fill="#667eea" rx="12.5"/>
+  <text x="400" y="65.625" font-family="Arial, sans-serif" font-size="30" fill="white" text-anchor="middle" font-weight="bold">Todo List</text>
   
   <!-- Input Section -->
-  <rect x="100" y="180" width="1080" height="100" fill="white" rx="40" stroke="#e2e8f0" stroke-width="4"/>
-  <rect x="140" y="210" width="800" height="40" fill="#edf2f7" rx="20"/>
-  <rect x="980" y="200" width="160" height="60" fill="#667eea" rx="20"/>
-  <text x="1060" y="240" font-family="Arial" font-size="40" fill="white" text-anchor="middle">+</text>
+  <rect x="62.5" y="112.5" width="675" height="62.5" fill="white" rx="25" stroke="#e2e8f0" stroke-width="2.5"/>
+  <rect x="87.5" y="131.25" width="500" height="25" fill="#edf2f7" rx="12.5"/>
+  <rect x="612.5" y="125" width="100" height="37.5" fill="#667eea" rx="12.5"/>
+  <text x="662.5" y="150" font-family="Arial, sans-serif" font-size="25" fill="white" text-anchor="middle">+</text>
   
   <!-- Filter Buttons -->
-  <rect x="100" y="320" width="340" height="50" fill="#667eea" rx="15"/>
-  <rect x="470" y="320" width="340" height="50" fill="white" rx="15" stroke="#e2e8f0" stroke-width="2"/>
-  <rect x="840" y="320" width="340" height="50" fill="white" rx="15" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="62.5" y="200" width="212.5" height="31.25" fill="#667eea" rx="9.375"/>
+  <rect x="293.75" y="200" width="212.5" height="31.25" fill="white" rx="9.375" stroke="#e2e8f0" stroke-width="1.25"/>
+  <rect x="525" y="200" width="212.5" height="31.25" fill="white" rx="9.375" stroke="#e2e8f0" stroke-width="1.25"/>
   
   <!-- Todo Items -->
-  <rect x="100" y="410" width="1080" height="70" fill="white" rx="20" stroke="#e2e8f0" stroke-width="2"/>
-  <rect x="100" y="500" width="1080" height="70" fill="white" rx="20" stroke="#e2e8f0" stroke-width="2"/>
-  <rect x="100" y="590" width="1080" height="70" fill="white" rx="20" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="62.5" y="256.25" width="675" height="43.75" fill="white" rx="12.5" stroke="#e2e8f0" stroke-width="1.25"/>
+  <rect x="62.5" y="312.5" width="675" height="43.75" fill="white" rx="12.5" stroke="#e2e8f0" stroke-width="1.25"/>
+  <rect x="62.5" y="368.75" width="675" height="43.75" fill="white" rx="12.5" stroke="#e2e8f0" stroke-width="1.25"/>
   
-  <text x="640" y="640" font-family="Arial" font-size="28" fill="#718096" text-anchor="middle">Professional Todo List Application</text>
+  <!-- Professional Footer -->
+  <rect x="0" y="450" width="800" height="50" fill="#1a202c"/>
+  <rect x="0" y="448" width="800" height="2" fill="#667eea"/>
+  
+  <!-- Developer Credit -->
+  <text x="400" y="475" font-family="Arial, sans-serif" font-size="13" fill="#e2e8f0" text-anchor="middle" font-weight="500">
+    <tspan>Developed with ❤️ by Farid Teymouri</tspan>
+  </text>
+  <text x="400" y="492" font-family="Arial" font-size="11" fill="#a0aec0" text-anchor="middle">
+    <tspan>github.com/farid-teymouri</tspan>
+  </text>
 </svg>
