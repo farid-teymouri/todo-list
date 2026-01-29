@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Todo List Application - A professional vanilla JavaScript project"
+    />
+    <meta name="author" content="Your Name" />
+    <meta
+      name="keywords"
+      content="todo, javascript, vanilla js, portfolio, pwa"
+    />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Todo List App" />
+    <meta
+      property="og:description"
+      content="A professional todo list application built with vanilla JavaScript"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Icons -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>"
+    />
+
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../src/css/main.css" />
+
+    <title>Todo List App</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1>Todo List</h1>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <img
+            src="../src/assets/icons/sun.svg"
+            alt="Light mode"
+            class="icon sun-icon"
+          />
+          <img
+            src="../src/assets/icons/moon.svg"
+            alt="Dark mode"
+            class="icon moon-icon"
+          />
+        </button>
+      </header>
+
+      <!-- Input Section -->
+      <div class="input-section">
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="todoInput"
+            class="todo-input"
+            placeholder="Enter a new task... ✨"
+            aria-label="New task input"
+          />
+          <button id="addBtn" class="add-btn" aria-label="Add task">
+            <img src="../src/assets/icons/add.svg" alt="Add" class="icon" />
+          </button>
+        </div>
+        <div class="stats">
+          <span id="taskCount" class="task-count">0 tasks remaining</span>
+        </div>
+      </div>
+
+      <!-- Filter Section -->
+      <div class="filter-section">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+
+      <!-- Todo List -->
+      <ul id="todoList" class="todo-list" aria-label="Todo list"></ul>
+
+      <!-- Actions -->
+      <div class="actions-section">
+        <button id="clearCompleted" class="clear-btn" disabled>
+          Clear completed tasks
+        </button>
+        <button id="searchBtn" class="search-btn" aria-label="Search tasks">
+          <img src="../src/assets/icons/search.svg" alt="Search" class="icon" />
+        </button>
+      </div>
+
+      <!-- Search Modal -->
+      <div id="searchModal" class="search-modal">
+        <div class="search-modal-content">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search tasks..."
+            aria-label="Search tasks"
+          />
+          <button
+            id="closeSearch"
+            class="close-search"
+            aria-label="Close search"
+          >
+            &times;
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script type="module" src="../src/js/main.js"></script>
+
+    <!-- PWA Support -->
+    <script>
+      // Register service worker for PWA
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/service-worker.js")
+            .then((registration) => {
+              console.log("ServiceWorker registered:", registration.scope);
+            })
+            .catch((error) => {
+              console.log("ServiceWorker registration failed:", error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

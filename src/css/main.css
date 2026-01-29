@@ -1,0 +1,142 @@
+/* ==================== Main CSS Entry Point ==================== */
+
+/* Import CSS Modules */
+@import "./_variables.css";
+@import "./_base.css";
+@import "./_layout.css";
+@import "./_components.css";
+@import "./_utilities.css";
+
+/* Toast Component Styles */
+.toast {
+  position: fixed;
+  top: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(102, 126, 234, 0.95);
+  color: white;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-50);
+  animation: slideDown 0.3s ease;
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 280px;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.toast-message {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.toast-success {
+  background: rgba(72, 187, 120, 0.95);
+}
+.toast-danger {
+  background: rgba(245, 101, 101, 0.95);
+}
+.toast-warning {
+  background: rgba(237, 137, 54, 0.95);
+}
+.toast-info {
+  background: rgba(70, 130, 180, 0.95);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .theme-toggle,
+  .add-btn,
+  .filter-btn,
+  .todo-btn,
+  .clear-btn,
+  .search-btn,
+  .no-print {
+    display: none !important;
+  }
+
+  .todo-item.completed {
+    opacity: 0.3;
+  }
+
+  body {
+    background: white;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .todo-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* Accessibility Enhancements */
+:focus-visible {
+  outline: 3px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* Dark Mode Toggle Animation */
+.theme-toggle .icon {
+  transition: opacity var(--transition-fast);
+}
+
+.sun-icon {
+  opacity: 1;
+}
+
+.moon-icon {
+  opacity: 0;
+}
+
+[data-theme="dark"] .sun-icon {
+  opacity: 0;
+}
+
+[data-theme="dark"] .moon-icon {
+  opacity: 1;
+}
