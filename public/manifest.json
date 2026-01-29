@@ -5,89 +5,44 @@
   "start_url": "/todo-list/",
   "scope": "/todo-list/",
   "display": "standalone",
-  "display_override": ["window-controls-overlay", "standalone"],
   "background_color": "#ffffff",
   "theme_color": "#667eea",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/todo-list/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
       "src": "/todo-list/icon-192.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/todo-list/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "/todo-list/icon-512.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ],
-  "categories": ["productivity", "utilities", "tools"],
+  "categories": ["productivity", "utilities"],
   "screenshots": [
     {
-      "src": "/todo-list/screenshot-1.png",
+      "src": "/todo-list/screenshot-1.svg",
       "sizes": "1280x720",
-      "type": "image/png",
-      "platform": "wide",
-      "label": "Todo List Application Interface"
+      "type": "image/svg+xml",
+      "platform": "wide"
     }
   ],
   "shortcuts": [
     {
       "name": "Add New Task",
-      "short_name": "New Task",
-      "description": "Quickly add a new task",
       "url": "/todo-list/?new-task",
       "icons": [
         {
-          "src": "/todo-list/icon-192.png",
+          "src": "/todo-list/icon-192.svg",
           "sizes": "192x192"
         }
       ]
     }
   ],
-  "share_target": {
-    "action": "/todo-list/",
-    "method": "GET",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url"
-    }
-  },
-  "file_handlers": [
-    {
-      "action": "/todo-list/",
-      "accept": {
-        "text/plain": [".txt"],
-        "application/json": [".json"]
-      }
-    }
-  ],
-  "handle_links": "preferred",
   "id": "/todo-list/",
-  "lang": "en",
-  "dir": "ltr",
-  "iarc_rating_id": null,
-  "prefer_related_applications": false,
-  "related_applications": [],
-  "serviceworker": {
-    "src": "/todo-list/service-worker.js",
-    "scope": "/todo-list/",
-    "update_via_cache": "none"
-  },
-  "theme_color_in_title_bar": true
+  "lang": "en"
 }
