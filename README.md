@@ -2,7 +2,7 @@
 
 A professional, fully-featured todo list application built with vanilla JavaScript. This project demonstrates modern web development best practices including modular architecture, accessibility, responsive design, and performance optimization.
 
-![Todo List Preview](https://github.com/farid-teymouri/todo-list/public/screenshot-1.svg)
+![Todo List Preview](https://raw.githubusercontent.com/farid-teymouri/todo-list/32fc6c6eedfc6f8ea234afeaa2533c1eb1fac881/public/screenshot-1.svg)
 ![License](https://img.shields.io/github/license/yourusername/todo-list-app)
 ![GitHub stars](https://img.shields.io/github/stars/yourusername/todo-list-app)
 ![GitHub forks](https://img.shields.io/github/forks/yourusername/todo-list-app)
