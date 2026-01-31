@@ -2,12 +2,12 @@
 
 A professional, fully-featured todo list application built with vanilla JavaScript. This project demonstrates modern web development best practices including modular architecture, accessibility, responsive design, and performance optimization.
 
-![Todo List Preview](https://raw.githubusercontent.com/farid-teymouri/todo-list/32fc6c6eedfc6f8ea234afeaa2533c1eb1fac881/public/screenshot-1.svg)
-![License](https://img.shields.io/github/license/farid-teymouri/todo-list-app)
-![GitHub stars](https://img.shields.io/github/stars/farid-teymouri/todo-list-app)
-![GitHub forks](https://img.shields.io/github/forks/farid-teymouri/todo-list-app)
-![GitHub issues](https://img.shields.io/github/issues/farid-teymouri/todo-list-app)
-![GitHub last commit](https://img.shields.io/github/last-commit/farid-teymouri/todo-list-app)
+![Todo List Preview](https://raw.githubusercontent.com/farid-teymouri/todo-list/32fc6c6eedfc6f8ea234afeaa2533c1eb1fac881/public/screenshot-1.svg) <br>
+![License](https://img.shields.io/github/license/farid-teymouri/todo-list)
+![GitHub stars](https://img.shields.io/github/stars/farid-teymouri/todo-list)
+![GitHub forks](https://img.shields.io/github/forks/farid-teymouri/todo-list)
+![GitHub issues](https://img.shields.io/github/issues/farid-teymouri/todo-list)
+![GitHub last commit](https://img.shields.io/github/last-commit/farid-teymouri/todo-list)
 
 ## ✨ Features
 
@@ -114,8 +114,8 @@ todo-list/
 #### 1. Clone or download the repository:
 
 ```bash
-git clone https://github.com/farid-teymouri/todo-list-app.git
-cd todo-list-app
+git clone https://github.com/farid-teymouri/todo-list.git
+cd todo-list
 ```
 
 #### 2. Open public/index.html directly in your browser <br>
@@ -127,8 +127,8 @@ That's it! The app works without any build step.
 #### 1. Clone the repository:
 
 ```bash
-git clone https://github.com/farid-teymouri/todo-list-app.git
-cd todo-list-app
+git clone https://github.com/farid-teymouri/todo-list.git
+cd todo-list
 ```
 
 #### 2. Install dependencies:
