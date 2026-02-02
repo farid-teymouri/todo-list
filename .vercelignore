@@ -1,34 +1,62 @@
-# Dependencies
+# Dependencies (not needed for build)
 
 node_modules/
+package-lock.json
+yarn.lock
 
-# Source files (we only need dist/)
+# Environment variables (security)
 
-src/
-public/
+.env
+.env.local
+.env.\*.local
+.env.production
+.env.development
 
-# Config files
-
-.vercelignore
-vercel.json
-
-# Build files
-
-build.js
-
-# Git
-
-.git/
-.gitignore
-
-# IDE
+# IDE and Editor files
 
 .vscode/
 .idea/
-
-# OS
-
-.DS_Store
 _.swp
 _.swo
 \*~
+.project
+.classpath
+.settings/
+
+# OS files
+
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.Spotlight-V100
+.Trashes
+
+# Logs
+
+_.log
+logs/
+npm-debug.log_
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log\*
+
+# Testing
+
+coverage/
+.nyc_output/
+.pytest_cache/
+.tox/
+
+# Temporary files
+
+tmp/
+temp/
+_.tmp
+_.temp
+
+# Misc
+
+.sass-cache/
+.eslintcache
+.prettiercache
