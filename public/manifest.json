@@ -48,58 +48,15 @@
   "shortcuts": [
     {
       "name": "Add New Task",
-<<<<<<< HEAD
       "url": "/todo-list/?new-task",
       "icons": [
         {
           "src": "/todo-list/icon-192.svg",
-=======
-      "short_name": "New Task",
-      "description": "Quickly add a new task",
-      "url": "/todo-list/?new-task",
-      "icons": [
-        {
-          "src": "/todo-list/icon-192.png",
->>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
           "sizes": "192x192"
         }
       ]
     }
   ],
-<<<<<<< HEAD
   "id": "/todo-list/",
   "lang": "en"
-=======
-  "share_target": {
-    "action": "/todo-list/",
-    "method": "GET",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url"
-    }
-  },
-  "file_handlers": [
-    {
-      "action": "/todo-list/",
-      "accept": {
-        "text/plain": [".txt"],
-        "application/json": [".json"]
-      }
-    }
-  ],
-  "handle_links": "preferred",
-  "id": "/todo-list/",
-  "lang": "en",
-  "dir": "ltr",
-  "iarc_rating_id": null,
-  "prefer_related_applications": false,
-  "related_applications": [],
-  "serviceworker": {
-    "src": "/todo-list/service-worker.js",
-    "scope": "/todo-list/",
-    "update_via_cache": "none"
-  },
-  "theme_color_in_title_bar": true
->>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
 }

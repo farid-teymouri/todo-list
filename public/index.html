@@ -25,7 +25,7 @@
     />
 
     <!-- Manifest for PWA -->
-    <link rel="manifest" href="./manifest.json" />
+    <link rel="manifest" href="manifest.json" />
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../src/css/main.css" />
@@ -80,17 +80,25 @@
         </button>
       </div>
 
-      <!-- Search Modal -->
-      <div id="searchModal" class="search-modal">
-        <div class="search-modal-content">
-          <input
-            type="text"
-            id="searchInput"
-            class="search-input"
-            placeholder="Search tasks..."
-            aria-label="Search tasks"
-          />
-          <button id="closeSearch" class="close-search" aria-label="Close search">&times;</button>
+      <!-- Search Bar (Inline Animation) -->
+      <div id="searchContainer" class="search-container">
+        <div id="searchBar" class="search-bar">
+          <div class="search-bar-inner">
+            <img src="../src/assets/icons/search.svg" alt="" class="search-icon" />
+            <input
+              type="text"
+              id="searchInput"
+              class="search-input-inline"
+              placeholder="Search tasks... (Press / to focus)"
+              aria-label="Search tasks"
+            />
+            <button id="clearSearch" class="clear-search" aria-label="Clear search">
+              <span class="clear-icon">×</span>
+            </button>
+            <button id="closeSearch" class="close-search-btn" aria-label="Close search">
+              <span class="close-icon">ESC</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -100,29 +108,19 @@
 
     <!-- PWA Support -->
     <script>
-            // Register service worker for PWA
-            if ('serviceWorker' in navigator) {
-              window.addEventListener('load', () => {
-                navigator.serviceWorker
-      <<<<<<< HEAD
-                  .register('./service-worker.js')
-                  .then(registration => {
-                    console.log('ServiceWorker registered:', registration.scope);
-      =======
-      <<<<<<< HEAD
-                  .register("./service-worker.js")
-      =======
-                  .register("/service-worker.js")
-      >>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
-                  .then((registration) => {
-                    console.log("ServiceWorker registered:", registration.scope);
-      >>>>>>> 9993308 (fix(vercel): configure deployment to serve from dist directory)
-                  })
-                  .catch(error => {
-                    console.log('ServiceWorker registration failed:', error);
-                  });
-              });
-            }
+      // Register service worker for PWA
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('./service-worker.js')
+            .then(registration => {
+              console.log('ServiceWorker registered:', registration.scope);
+            })
+            .catch(error => {
+              console.log('ServiceWorker registration failed:', error);
+            });
+        });
+      }
     </script>
   </body>
 </html>
