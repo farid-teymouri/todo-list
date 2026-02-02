@@ -9,6 +9,17 @@ A professional, fully-featured todo list application built with vanilla JavaScri
 ![GitHub issues](https://img.shields.io/github/issues/farid-teymouri/todo-list)
 ![GitHub last commit](https://img.shields.io/github/last-commit/farid-teymouri/todo-list)
 
+## 🌐 Live Demo
+
+Experience the application live on Vercel:
+
+👉 **[https://todo-list-sooty-eight-88.vercel.app/](https://todo-list-sooty-eight-88.vercel.app/)** 👈
+
+✅ Fully functional PWA  
+✅ Installable on mobile/desktop  
+✅ Works offline with Service Worker  
+✅ Dark/light mode with system detection
+
 ## ✨ Features
 
 ### Core Functionality
@@ -52,52 +63,62 @@ A professional, fully-featured todo list application built with vanilla JavaScri
 ```bash
 todo-list/
 ├── .github/
-│ └── workflows/
-│ └── deploy.yml # CI/CD for GitHub Pages
-├── public/ # Public assets (deployment ready)
-│ ├── index.html # Main HTML file
-│ ├── manifest.json # PWA manifest
-│ ├── service-worker.js # Service worker for offline support
-│ ├── icon-192.svg # App icon (192x192)
-│ ├── icon-512.svg # App icon (512x512)
-│ └── screenshot-1.svg # App screenshot for stores
-├── src/ # Source code
-│ ├── assets/ # Static assets
-│ │ └── icons/ # SVG icons
-│ │ ├── sun.svg
-│ │ ├── moon.svg
-│ │ ├── search.svg
-│ │ ├── edit.svg
-│ │ ├── delete.svg
-│ │ └── add.svg
-│ ├── css/ # Stylesheets
-│ │ ├── \_variables.css # CSS custom properties
-│ │ ├── \_base.css # Base styles and resets
-│ │ ├── \_components.css # Component styles
-│ │ ├── \_layout.css # Layout styles
-│ │ ├── \_utilities.css # Utility classes
-│ │ └── main.css # Main stylesheet (entry point)
-│ ├── js/ # JavaScript modules
-│ │ ├── core/ # Core application logic
-│ │ │ ├── TodoApp.js # Main application class
-│ │ │ ├── StorageManager.js # LocalStorage management
-│ │ │ └── ThemeManager.js # Dark/light mode management
-│ │ ├── ui/ # UI components
-│ │ │ ├── TodoRenderer.js # Todo rendering logic
-│ │ │ ├── Toast.js # Toast notification system
-│ │ │ └── Modal.js # Modal dialog system
-│ │ ├── utils/ # Utility functions
-│ │ │ ├── helpers.js # Helper functions
-│ │ │ └── constants.js # Application constants
-│ │ └── main.js # Application entry point
-│ └── lib/ # Third-party libraries (if any)
-├── .editorconfig # Editor configuration
-├── .gitignore # Git ignore rules
-├── .prettierrc # Code formatting rules
-├── build.js # Build script
-├── package.json # NPM package configuration
-├── LICENSE # MIT License
-└── README.md # This file
+│   └── workflows/
+│       └── deploy.yml          # CI/CD for GitHub Pages
+├── public/                     # Public assets (deployment ready)
+│   ├── assets/                 # Static assets for production
+│   │   └── icons/              # SVG icons
+│   │       ├── sun.svg
+│   │       ├── moon.svg
+│   │       ├── search.svg
+│   │       ├── edit.svg
+│   │       ├── delete.svg
+│   │       └── add.svg
+│   ├── index.html              # Main HTML file
+│   ├── manifest.json           # PWA manifest
+│   ├── service-worker.js       # Service worker for offline support
+│   ├── icon-192.svg            # App icon (192x192)
+│   ├── icon-512.svg            # App icon (512x512)
+│   └── screenshot-1.svg        # App screenshot for stores
+├── src/                        # Source code
+│   ├── assets/                 # Static assets (source)
+│   │   └── icons/              # SVG icons
+│   │       ├── sun.svg
+│   │       ├── moon.svg
+│   │       ├── search.svg
+│   │       ├── edit.svg
+│   │       ├── delete.svg
+│   │       └── add.svg
+│   ├── css/                    # Stylesheets
+│   │   ├── _variables.css      # CSS custom properties
+│   │   ├── _base.css           # Base styles and resets
+│   │   ├── _components.css     # Component styles
+│   │   ├── _layout.css         # Layout styles
+│   │   ├── _utilities.css      # Utility classes
+│   │   └── main.css            # Main stylesheet (entry point)
+│   ├── js/                     # JavaScript modules
+│   │   ├── core/               # Core application logic
+│   │   │   ├── TodoApp.js      # Main application class
+│   │   │   ├── StorageManager.js # LocalStorage management
+│   │   │   └── ThemeManager.js # Dark/light mode management
+│   │   ├── ui/                 # UI components
+│   │   │   ├── TodoRenderer.js # Todo rendering logic
+│   │   │   ├── Toast.js        # Toast notification system
+│   │   │   └── Modal.js        # Modal dialog system (legacy)
+│   │   ├── utils/              # Utility functions
+│   │   │   ├── helpers.js      # Helper functions
+│   │   │   └── constants.js    # Application constants
+│   │   └── main.js             # Application entry point
+│   └── lib/                    # Third-party libraries (if any)
+├── .editorconfig               # Editor configuration
+├── .gitignore                  # Git ignore rules
+├── .prettierrc                 # Code formatting rules
+├── .vercelignore               # Vercel deployment ignore rules
+├── build.js                    # Build script for production
+├── package.json                # NPM package configuration
+├── vercel.json                 # Vercel deployment configuration
+├── LICENSE                     # MIT License
+└── README.md                   # This file
 ```
 
 ## 🚀 Getting Started
