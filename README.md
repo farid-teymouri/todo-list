@@ -2,7 +2,7 @@
 
 A professional, fully-featured todo list application built with vanilla JavaScript. This project demonstrates modern web development best practices including modular architecture, accessibility, responsive design, and performance optimization.
 
-![Todo List Preview](https://raw.githubusercontent.com/farid-teymouri/todo-list/32fc6c6eedfc6f8ea234afeaa2533c1eb1fac881/public/screenshot-1.svg)
+![Todo List Preview](https://via.placeholder.com/800x400/667eea/ffffff?text=Todo+List+App)
 ![License](https://img.shields.io/github/license/yourusername/todo-list-app)
 ![GitHub stars](https://img.shields.io/github/stars/yourusername/todo-list-app)
 ![GitHub forks](https://img.shields.io/github/forks/yourusername/todo-list-app)
@@ -116,6 +116,8 @@ todo-list/
 ```bash
 git clone https://github.com/yourusername/todo-list-app.git
 cd todo-list-app
+git clone https://github.com/yourusername/todo-list-app.git
+cd todo-list-app
 ```
 
 #### 2. Open public/index.html directly in your browser <br>
@@ -127,6 +129,8 @@ That's it! The app works without any build step.
 #### 1. Clone the repository:
 
 ```bash
+git clone https://github.com/yourusername/todo-list-app.git
+cd todo-list-app
 git clone https://github.com/yourusername/todo-list-app.git
 cd todo-list-app
 ```

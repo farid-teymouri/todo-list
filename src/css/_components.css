@@ -26,8 +26,11 @@
   transition: var(--transition-normal);
   box-shadow: var(--shadow-md);
   cursor: pointer;
+<<<<<<< HEAD
   position: relative; /* Important for icon positioning */
   padding: 0; /* Remove any default button padding */
+=======
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
 }
 
 .theme-toggle:hover {
@@ -156,7 +159,11 @@
 .todo-item {
   background: var(--bg-secondary);
   border-radius: var(--radius-md);
+<<<<<<< HEAD
   padding: var(--space-2);
+=======
+  padding: var(--space-4);
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
   display: flex;
   align-items: center;
   gap: var(--space-4);
@@ -201,8 +208,13 @@
 
 /* Checkbox Components */
 .todo-checkbox {
+<<<<<<< HEAD
   width: 18px;
   height: 18px;
+=======
+  width: 24px;
+  height: 24px;
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
   cursor: pointer;
   accent-color: var(--success);
   transform: scale(1.3);
@@ -414,6 +426,7 @@
     transform: rotate(360deg);
   }
 }
+<<<<<<< HEAD
 /* ==================== Search Container ==================== */
 .search-container {
   position: relative;
@@ -585,3 +598,5 @@
     transition: none !important;
   }
 }
+=======
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)

@@ -122,6 +122,7 @@
 
 /* Dark Mode Toggle Animation */
 .theme-toggle .icon {
+<<<<<<< HEAD
   width: 24px;
   height: 24px;
   display: block;
@@ -139,4 +140,23 @@
 
 [data-theme="dark"] .theme-toggle .moon-icon {
   display: block;
+=======
+  transition: opacity var(--transition-fast);
+}
+
+.sun-icon {
+  opacity: 1;
+}
+
+.moon-icon {
+  opacity: 0;
+}
+
+[data-theme="dark"] .sun-icon {
+  opacity: 0;
+}
+
+[data-theme="dark"] .moon-icon {
+  opacity: 1;
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
 }

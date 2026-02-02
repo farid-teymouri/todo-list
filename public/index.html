@@ -80,6 +80,7 @@
         </button>
       </div>
 
+<<<<<<< HEAD
       <!-- Search Bar (Inline Animation) -->
       <div id="searchContainer" class="search-container">
         <div id="searchBar" class="search-bar">
@@ -99,6 +100,25 @@
               <span class="close-icon">ESC</span>
             </button>
           </div>
+=======
+      <!-- Search Modal -->
+      <div id="searchModal" class="search-modal">
+        <div class="search-modal-content">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search tasks..."
+            aria-label="Search tasks"
+          />
+          <button
+            id="closeSearch"
+            class="close-search"
+            aria-label="Close search"
+          >
+            &times;
+          </button>
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
         </div>
       </div>
     </div>
@@ -112,9 +132,19 @@
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker
+<<<<<<< HEAD
             .register('./service-worker.js')
             .then(registration => {
               console.log('ServiceWorker registered:', registration.scope);
+=======
+<<<<<<< HEAD
+            .register("./service-worker.js")
+=======
+            .register("/service-worker.js")
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
+            .then((registration) => {
+              console.log("ServiceWorker registered:", registration.scope);
+>>>>>>> 9993308 (fix(vercel): configure deployment to serve from dist directory)
             })
             .catch(error => {
               console.log('ServiceWorker registration failed:', error);

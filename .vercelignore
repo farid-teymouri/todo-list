@@ -1,27 +1,34 @@
 # Dependencies
+
 node_modules/
 
 # Source files (we only need dist/)
+
 src/
 public/
 
 # Config files
+
 .vercelignore
 vercel.json
 
 # Build files
+
 build.js
 
 # Git
+
 .git/
 .gitignore
 
 # IDE
+
 .vscode/
 .idea/
 
 # OS
+
 .DS_Store
-*.swp
-*.swo
-*~
+_.swp
+_.swo
+\*~

@@ -44,6 +44,10 @@ export class TodoApp {
     this.cacheDOMElements();
     this.loadFromStorage();
     this.setupRenderer();
+<<<<<<< HEAD
+=======
+    this.setupModal();
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
     this.setupEventListeners();
     this.setupKeyboardShortcuts();
     this.render();
@@ -62,10 +66,15 @@ export class TodoApp {
       taskCountEl: document.getElementById("taskCount"),
       themeToggle: document.getElementById("themeToggle"),
       searchBtn: document.getElementById("searchBtn"),
+<<<<<<< HEAD
       searchContainer: document.getElementById("searchContainer"),
       searchInput: document.getElementById("searchInput"),
       clearSearchBtn: document.getElementById("clearSearch"),
       closeSearchBtn: document.getElementById("closeSearch"),
+=======
+      searchInput: document.getElementById("searchInput"),
+      closeSearch: document.getElementById("closeSearch"),
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
     };
   }
 
@@ -77,6 +86,16 @@ export class TodoApp {
   }
 
   /**
+<<<<<<< HEAD
+=======
+   * Setup search modal
+   */
+  setupModal() {
+    this.searchModal = new Modal("#searchModal");
+  }
+
+  /**
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
    * Setup event listeners
    */
   setupEventListeners() {
@@ -106,16 +125,25 @@ export class TodoApp {
       this.toggleTheme(),
     );
 
+<<<<<<< HEAD
     // Search button - toggle search bar
     this.elements.searchBtn.addEventListener("click", () =>
       this.toggleSearchBar(),
     );
 
     // Search input
+=======
+    // Search
+    this.elements.searchBtn.addEventListener("click", () => this.openSearch());
+    this.elements.closeSearch.addEventListener("click", () =>
+      this.closeSearch(),
+    );
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
     this.elements.searchInput.addEventListener("input", (e) => {
       this.searchQuery = e.target.value;
       this.render();
     });
+<<<<<<< HEAD
 
     // Clear search button
     this.elements.clearSearchBtn.addEventListener("click", () => {
@@ -129,6 +157,8 @@ export class TodoApp {
     this.elements.closeSearchBtn.addEventListener("click", () =>
       this.closeSearchBar(),
     );
+=======
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
   }
 
   /**
@@ -154,14 +184,22 @@ export class TodoApp {
         this.toggleTheme();
       }
 
+<<<<<<< HEAD
       // Escape: Close search or clear input
       if (e.key === KEYBOARD_SHORTCUTS.ESCAPE) {
         if (this.elements.searchContainer.classList.contains("active")) {
           this.closeSearchBar();
+=======
+      // Escape: Clear input or close search
+      if (e.key === KEYBOARD_SHORTCUTS.ESCAPE) {
+        if (this.searchModal.isOpen) {
+          this.closeSearch();
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
         } else {
           this.elements.todoInput.value = "";
         }
       }
+<<<<<<< HEAD
 
       // Forward slash (/): Focus search
       if (
@@ -177,6 +215,8 @@ export class TodoApp {
         e.preventDefault();
         this.toggleSearchBar();
       }
+=======
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
     });
   }
 
@@ -312,6 +352,7 @@ export class TodoApp {
       isDark ? MESSAGES.DARK_MODE_ENABLED : MESSAGES.DARK_MODE_DISABLED,
     );
   }
+<<<<<<< HEAD
   /**
    * Toggle search bar visibility
    */
@@ -327,11 +368,20 @@ export class TodoApp {
    */
   openSearchBar() {
     this.elements.searchContainer.classList.add("active");
+=======
+
+  /**
+   * Open search modal
+   */
+  openSearch() {
+    this.searchModal.open();
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
     this.elements.searchInput.focus();
     this.elements.searchInput.select();
   }
 
   /**
+<<<<<<< HEAD
    * Close search bar with animation
    */
   closeSearchBar() {
@@ -345,6 +395,17 @@ export class TodoApp {
       this.elements.todoInput.focus();
     }, 300);
   }
+=======
+   * Close search modal
+   */
+  closeSearch() {
+    this.searchModal.close();
+    this.searchQuery = "";
+    this.elements.searchInput.value = "";
+    this.render();
+  }
+
+>>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
   /**
    * Update filter button active states
    */
