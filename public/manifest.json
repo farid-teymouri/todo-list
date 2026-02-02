@@ -2,61 +2,47 @@
   "name": "Todo List - Farid Teymouri",
   "short_name": "TodoList",
   "description": "A professional todo list application built with vanilla JavaScript by Farid Teymouri",
-  "start_url": "/todo-list/",
-  "scope": "/todo-list/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "display_override": ["window-controls-overlay", "standalone"],
   "background_color": "#ffffff",
   "theme_color": "#667eea",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/todo-list/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/todo-list/icon-192.svg",
+      "src": "/icon-192.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "/todo-list/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/todo-list/icon-512.svg",
+      "src": "/icon-512.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ],
-  "categories": ["productivity", "utilities", "tools"],
+  "categories": ["productivity", "utilities"],
   "screenshots": [
     {
-      "src": "/todo-list/screenshot-1.png",
+      "src": "/screenshot-1.svg",
       "sizes": "1280x720",
-      "type": "image/png",
-      "platform": "wide",
-      "label": "Todo List Application Interface"
+      "type": "image/svg+xml",
+      "platform": "wide"
     }
   ],
   "shortcuts": [
     {
       "name": "Add New Task",
-      "url": "/todo-list/?new-task",
+      "url": "/",
       "icons": [
         {
-          "src": "/todo-list/icon-192.svg",
+          "src": "/icon-192.svg",
           "sizes": "192x192"
         }
       ]
     }
   ],
-  "id": "/todo-list/",
+  "id": "/",
   "lang": "en"
 }

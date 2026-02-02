@@ -3,19 +3,19 @@
  * Main application class managing todo functionality
  */
 
-import { StorageManager } from "./StorageManager.js";
-import { ThemeManager } from "./ThemeManager.js";
-import { TodoRenderer } from "../ui/TodoRenderer.js";
-import { Toast } from "../ui/Toast.js";
-import { Modal } from "../ui/Modal.js";
+import { StorageManager } from './StorageManager.js';
+import { ThemeManager } from './ThemeManager.js';
+import { TodoRenderer } from '../ui/TodoRenderer.js';
+import { Toast } from '../ui/Toast.js';
+import { Modal } from '../ui/Modal.js';
 import {
   APP_CONFIG,
   FILTER_TYPES,
   KEYBOARD_SHORTCUTS,
   ARIA_LABELS,
   MESSAGES,
-} from "../utils/constants.js";
-import { validateTodoText, generateId } from "../utils/helpers.js";
+} from '../utils/constants.js';
+import { validateTodoText, generateId } from '../utils/helpers.js';
 
 export class TodoApp {
   /**
@@ -25,7 +25,7 @@ export class TodoApp {
     // State
     this.todos = [];
     this.filter = FILTER_TYPES.ALL;
-    this.searchQuery = "";
+    this.searchQuery = '';
     this.deletedTodo = null;
     this.deletedTime = null;
 
@@ -44,10 +44,6 @@ export class TodoApp {
     this.cacheDOMElements();
     this.loadFromStorage();
     this.setupRenderer();
-<<<<<<< HEAD
-=======
-    this.setupModal();
->>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
     this.setupEventListeners();
     this.setupKeyboardShortcuts();
     this.render();
@@ -58,23 +54,18 @@ export class TodoApp {
    */
   cacheDOMElements() {
     this.elements = {
-      todoInput: document.getElementById("todoInput"),
-      addBtn: document.getElementById("addBtn"),
-      todoList: document.getElementById("todoList"),
-      filterBtns: document.querySelectorAll(".filter-btn"),
-      clearCompletedBtn: document.getElementById("clearCompleted"),
-      taskCountEl: document.getElementById("taskCount"),
-      themeToggle: document.getElementById("themeToggle"),
-      searchBtn: document.getElementById("searchBtn"),
-<<<<<<< HEAD
-      searchContainer: document.getElementById("searchContainer"),
-      searchInput: document.getElementById("searchInput"),
-      clearSearchBtn: document.getElementById("clearSearch"),
-      closeSearchBtn: document.getElementById("closeSearch"),
-=======
-      searchInput: document.getElementById("searchInput"),
-      closeSearch: document.getElementById("closeSearch"),
->>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
+      todoInput: document.getElementById('todoInput'),
+      addBtn: document.getElementById('addBtn'),
+      todoList: document.getElementById('todoList'),
+      filterBtns: document.querySelectorAll('.filter-btn'),
+      clearCompletedBtn: document.getElementById('clearCompleted'),
+      taskCountEl: document.getElementById('taskCount'),
+      themeToggle: document.getElementById('themeToggle'),
+      searchBtn: document.getElementById('searchBtn'),
+      searchContainer: document.getElementById('searchContainer'),
+      searchInput: document.getElementById('searchInput'),
+      clearSearchBtn: document.getElementById('clearSearch'),
+      closeSearchBtn: document.getElementById('closeSearch'),
     };
   }
 
@@ -86,28 +77,18 @@ export class TodoApp {
   }
 
   /**
-<<<<<<< HEAD
-=======
-   * Setup search modal
-   */
-  setupModal() {
-    this.searchModal = new Modal("#searchModal");
-  }
-
-  /**
->>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
    * Setup event listeners
    */
   setupEventListeners() {
     // Add todo
-    this.elements.addBtn.addEventListener("click", () => this.handleAddTodo());
-    this.elements.todoInput.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") this.handleAddTodo();
+    this.elements.addBtn.addEventListener('click', () => this.handleAddTodo());
+    this.elements.todoInput.addEventListener('keypress', e => {
+      if (e.key === 'Enter') this.handleAddTodo();
     });
 
     // Filter todos
-    this.elements.filterBtns.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
+    this.elements.filterBtns.forEach(btn => {
+      btn.addEventListener('click', e => {
         this.filter = e.target.dataset.filter;
         this.saveFilter();
         this.updateFilterButtons();
@@ -116,107 +97,69 @@ export class TodoApp {
     });
 
     // Clear completed
-    this.elements.clearCompletedBtn.addEventListener("click", () =>
-      this.clearCompleted(),
-    );
+    this.elements.clearCompletedBtn.addEventListener('click', () => this.clearCompleted());
 
     // Theme toggle
-    this.elements.themeToggle.addEventListener("click", () =>
-      this.toggleTheme(),
-    );
+    this.elements.themeToggle.addEventListener('click', () => this.toggleTheme());
 
-<<<<<<< HEAD
     // Search button - toggle search bar
-    this.elements.searchBtn.addEventListener("click", () =>
-      this.toggleSearchBar(),
-    );
+    this.elements.searchBtn.addEventListener('click', () => this.toggleSearchBar());
 
     // Search input
-=======
-    // Search
-    this.elements.searchBtn.addEventListener("click", () => this.openSearch());
-    this.elements.closeSearch.addEventListener("click", () =>
-      this.closeSearch(),
-    );
->>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
-    this.elements.searchInput.addEventListener("input", (e) => {
+    this.elements.searchInput.addEventListener('input', e => {
       this.searchQuery = e.target.value;
       this.render();
     });
-<<<<<<< HEAD
 
     // Clear search button
-    this.elements.clearSearchBtn.addEventListener("click", () => {
-      this.elements.searchInput.value = "";
-      this.searchQuery = "";
+    this.elements.clearSearchBtn.addEventListener('click', () => {
+      this.elements.searchInput.value = '';
+      this.searchQuery = '';
       this.render();
       this.elements.searchInput.focus();
     });
 
     // Close search button
-    this.elements.closeSearchBtn.addEventListener("click", () =>
-      this.closeSearchBar(),
-    );
-=======
->>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
+    this.elements.closeSearchBtn.addEventListener('click', () => this.closeSearchBar());
   }
 
   /**
    * Setup keyboard shortcuts
    */
   setupKeyboardShortcuts() {
-    document.addEventListener("keydown", (e) => {
+    document.addEventListener('keydown', e => {
       // Ctrl/Cmd + E: Focus on input
-      if (
-        (e.ctrlKey || e.metaKey) &&
-        e.key === KEYBOARD_SHORTCUTS.FOCUS_INPUT
-      ) {
+      if ((e.ctrlKey || e.metaKey) && e.key === KEYBOARD_SHORTCUTS.FOCUS_INPUT) {
         e.preventDefault();
         this.elements.todoInput.focus();
       }
 
       // Ctrl/Cmd + D: Toggle dark mode
-      if (
-        (e.ctrlKey || e.metaKey) &&
-        e.key === KEYBOARD_SHORTCUTS.TOGGLE_DARK_MODE
-      ) {
+      if ((e.ctrlKey || e.metaKey) && e.key === KEYBOARD_SHORTCUTS.TOGGLE_DARK_MODE) {
         e.preventDefault();
         this.toggleTheme();
       }
 
-<<<<<<< HEAD
       // Escape: Close search or clear input
       if (e.key === KEYBOARD_SHORTCUTS.ESCAPE) {
-        if (this.elements.searchContainer.classList.contains("active")) {
+        if (this.elements.searchContainer.classList.contains('active')) {
           this.closeSearchBar();
-=======
-      // Escape: Clear input or close search
-      if (e.key === KEYBOARD_SHORTCUTS.ESCAPE) {
-        if (this.searchModal.isOpen) {
-          this.closeSearch();
->>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
         } else {
-          this.elements.todoInput.value = "";
+          this.elements.todoInput.value = '';
         }
       }
-<<<<<<< HEAD
 
       // Forward slash (/): Focus search
-      if (
-        e.key === "/" &&
-        !this.elements.searchInput.contains(document.activeElement)
-      ) {
+      if (e.key === '/' && !this.elements.searchInput.contains(document.activeElement)) {
         e.preventDefault();
         this.openSearchBar();
       }
 
       // Ctrl/Cmd + K: Toggle search
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
         this.toggleSearchBar();
       }
-=======
->>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
     });
   }
 
@@ -232,7 +175,7 @@ export class TodoApp {
     }
 
     this.addTodo(text);
-    this.elements.todoInput.value = "";
+    this.elements.todoInput.value = '';
     this.elements.todoInput.focus();
   }
 
@@ -259,7 +202,7 @@ export class TodoApp {
    * @param {number} id - Todo ID
    */
   toggleTodo(id) {
-    const todo = this.todos.find((t) => t.id === id);
+    const todo = this.todos.find(t => t.id === id);
     if (todo) {
       todo.completed = !todo.completed;
       this.saveToStorage();
@@ -272,10 +215,10 @@ export class TodoApp {
    * @param {number} id - Todo ID
    */
   editTodo(id) {
-    const todo = this.todos.find((t) => t.id === id);
+    const todo = this.todos.find(t => t.id === id);
     if (!todo) return;
 
-    const newText = prompt("Edit task:", todo.text);
+    const newText = prompt('Edit task:', todo.text);
     if (newText !== null && validateTodoText(newText)) {
       todo.text = newText.trim();
       this.saveToStorage();
@@ -289,7 +232,7 @@ export class TodoApp {
    * @param {number} id - Todo ID
    */
   deleteTodo(id) {
-    const todoIndex = this.todos.findIndex((t) => t.id === id);
+    const todoIndex = this.todos.findIndex(t => t.id === id);
     if (todoIndex === -1) return;
 
     // Save for undo
@@ -328,7 +271,7 @@ export class TodoApp {
    * Clear all completed todos
    */
   clearCompleted() {
-    const completedCount = this.todos.filter((t) => t.completed).length;
+    const completedCount = this.todos.filter(t => t.completed).length;
 
     if (completedCount === 0) {
       Toast.info(MESSAGES.NO_COMPLETED);
@@ -336,7 +279,7 @@ export class TodoApp {
     }
 
     if (confirm(MESSAGES.CONFIRM_CLEAR)) {
-      this.todos = this.todos.filter((t) => !t.completed);
+      this.todos = this.todos.filter(t => !t.completed);
       this.saveToStorage();
       this.render();
       Toast.success(MESSAGES.TASKS_CLEARED);
@@ -348,16 +291,13 @@ export class TodoApp {
    */
   toggleTheme() {
     const isDark = this.themeManager.toggle();
-    Toast.info(
-      isDark ? MESSAGES.DARK_MODE_ENABLED : MESSAGES.DARK_MODE_DISABLED,
-    );
+    Toast.info(isDark ? MESSAGES.DARK_MODE_ENABLED : MESSAGES.DARK_MODE_DISABLED);
   }
-<<<<<<< HEAD
   /**
    * Toggle search bar visibility
    */
   toggleSearchBar() {
-    if (this.elements.searchContainer.classList.contains("active")) {
+    if (this.elements.searchContainer.classList.contains('active')) {
       this.closeSearchBar();
     } else {
       this.openSearchBar();
@@ -367,27 +307,18 @@ export class TodoApp {
    * Open search bar with animation
    */
   openSearchBar() {
-    this.elements.searchContainer.classList.add("active");
-=======
-
-  /**
-   * Open search modal
-   */
-  openSearch() {
-    this.searchModal.open();
->>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
+    this.elements.searchContainer.classList.add('active');
     this.elements.searchInput.focus();
     this.elements.searchInput.select();
   }
 
   /**
-<<<<<<< HEAD
    * Close search bar with animation
    */
   closeSearchBar() {
-    this.elements.searchContainer.classList.remove("active");
-    this.elements.searchInput.value = "";
-    this.searchQuery = "";
+    this.elements.searchContainer.classList.remove('active');
+    this.elements.searchInput.value = '';
+    this.searchQuery = '';
     this.render();
 
     // Return focus to task input
@@ -395,23 +326,12 @@ export class TodoApp {
       this.elements.todoInput.focus();
     }, 300);
   }
-=======
-   * Close search modal
-   */
-  closeSearch() {
-    this.searchModal.close();
-    this.searchQuery = "";
-    this.elements.searchInput.value = "";
-    this.render();
-  }
-
->>>>>>> 029879d (feat: initial commit - professional todo list application with PWA support, dark mode, drag & drop, and offline functionality)
   /**
    * Update filter button active states
    */
   updateFilterButtons() {
-    this.elements.filterBtns.forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.filter === this.filter);
+    this.elements.filterBtns.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.filter === this.filter);
     });
   }
 
@@ -419,11 +339,11 @@ export class TodoApp {
    * Update task count display
    */
   updateTaskCount() {
-    const activeCount = this.todos.filter((t) => !t.completed).length;
+    const activeCount = this.todos.filter(t => !t.completed).length;
     this.elements.taskCountEl.textContent = `${activeCount} tasks remaining`;
 
     // Update clear button state
-    const hasCompleted = this.todos.some((t) => t.completed);
+    const hasCompleted = this.todos.some(t => t.completed);
     this.elements.clearCompletedBtn.disabled = !hasCompleted;
   }
 
@@ -432,10 +352,10 @@ export class TodoApp {
    */
   render() {
     this.renderer.render(this.todos, this.filter, this.searchQuery, {
-      onToggle: (id) => this.toggleTodo(id),
-      onEdit: (id) => this.editTodo(id),
-      onDelete: (id) => this.deleteTodo(id),
-      onReorder: (orderedIds) => this.reorderTodos(orderedIds),
+      onToggle: id => this.toggleTodo(id),
+      onEdit: id => this.editTodo(id),
+      onDelete: id => this.deleteTodo(id),
+      onReorder: orderedIds => this.reorderTodos(orderedIds),
     });
 
     this.updateTaskCount();
@@ -447,9 +367,7 @@ export class TodoApp {
    * @param {Array<number>} orderedIds - Array of todo IDs in new order
    */
   reorderTodos(orderedIds) {
-    this.todos.sort(
-      (a, b) => orderedIds.indexOf(a.id) - orderedIds.indexOf(b.id),
-    );
+    this.todos.sort((a, b) => orderedIds.indexOf(a.id) - orderedIds.indexOf(b.id));
     this.saveToStorage();
   }
 

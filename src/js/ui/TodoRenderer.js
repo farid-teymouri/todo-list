@@ -3,7 +3,7 @@
  * Handles rendering of todo items to the DOM
  */
 
-import { sanitizeHTML, formatDate } from "../utils/helpers.js";
+import { sanitizeHTML, formatDate } from '../utils/helpers.js';
 
 export class TodoRenderer {
   /**
@@ -22,12 +22,12 @@ export class TodoRenderer {
    * @param {string} searchQuery - Search query string
    * @param {object} callbacks - Callback functions for interactions
    */
-  render(todos, filter, searchQuery = "", callbacks = {}) {
+  render(todos, filter, searchQuery = '', callbacks = {}) {
     // Filter todos based on current filter and search
     const filteredTodos = this.filterTodos(todos, filter, searchQuery);
 
     // Clear existing list
-    this.todoList.innerHTML = "";
+    this.todoList.innerHTML = '';
 
     // Show empty state if no todos
     if (filteredTodos.length === 0) {
@@ -56,19 +56,17 @@ export class TodoRenderer {
     let filtered = [...todos];
 
     // Apply search filter
-    if (searchQuery.trim() !== "") {
+    if (searchQuery.trim() !== '') {
       const query = searchQuery.toLowerCase();
-      filtered = filtered.filter((todo) =>
-        todo.text.toLowerCase().includes(query),
-      );
+      filtered = filtered.filter(todo => todo.text.toLowerCase().includes(query));
     }
 
     // Apply completion filter
     switch (filter) {
-      case "active":
-        return filtered.filter((todo) => !todo.completed);
-      case "completed":
-        return filtered.filter((todo) => todo.completed);
+      case 'active':
+        return filtered.filter(todo => !todo.completed);
+      case 'completed':
+        return filtered.filter(todo => todo.completed);
       default:
         return filtered;
     }
@@ -80,14 +78,14 @@ export class TodoRenderer {
    * @param {string} searchQuery - Search query
    */
   renderEmptyState(filter, searchQuery) {
-    let message = "No tasks! Get started ✨";
+    let message = 'No tasks! Get started ✨';
 
     if (searchQuery) {
-      message = "No results found! 🔍";
-    } else if (filter === "completed") {
-      message = "No completed tasks! ✅";
-    } else if (filter === "active") {
-      message = "No active tasks! 🎉";
+      message = 'No results found! 🔍';
+    } else if (filter === 'completed') {
+      message = 'No completed tasks! ✅';
+    } else if (filter === 'active') {
+      message = 'No active tasks! 🎉';
     }
 
     this.todoList.innerHTML = `
@@ -104,61 +102,61 @@ export class TodoRenderer {
    * @returns {HTMLElement} - Todo list item element
    */
   createTodoElement(todo, callbacks) {
-    const li = document.createElement("li");
-    li.className = `todo-item ${todo.completed ? "completed" : ""}`;
+    const li = document.createElement('li');
+    li.className = `todo-item ${todo.completed ? 'completed' : ''}`;
     li.draggable = true;
     li.dataset.id = todo.id;
 
     // Create checkbox
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.className = "todo-checkbox";
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'todo-checkbox';
     checkbox.checked = todo.completed;
-    checkbox.setAttribute("aria-label", "Toggle task completion");
+    checkbox.setAttribute('aria-label', 'Toggle task completion');
 
-    checkbox.addEventListener("change", () => {
+    checkbox.addEventListener('change', () => {
       if (callbacks.onToggle) callbacks.onToggle(todo.id);
     });
 
     // Create content wrapper
-    const contentDiv = document.createElement("div");
-    contentDiv.className = "todo-content";
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'todo-content';
 
     // Create text span
-    const textSpan = document.createElement("span");
-    textSpan.className = "todo-text";
+    const textSpan = document.createElement('span');
+    textSpan.className = 'todo-text';
     textSpan.innerHTML = sanitizeHTML(todo.text);
 
     // Create meta info
-    const metaDiv = document.createElement("div");
-    metaDiv.className = "todo-meta";
+    const metaDiv = document.createElement('div');
+    metaDiv.className = 'todo-meta';
     metaDiv.textContent = `Created at: ${formatDate(todo.createdAt)}`;
 
     contentDiv.appendChild(textSpan);
     contentDiv.appendChild(metaDiv);
 
     // Create actions wrapper
-    const actionsDiv = document.createElement("div");
-    actionsDiv.className = "todo-actions";
+    const actionsDiv = document.createElement('div');
+    actionsDiv.className = 'todo-actions';
 
     // Create edit button
     const editBtn = this.createActionButton(
-      "edit-btn",
-      "../src/assets/icons/edit.svg",
-      "Edit task",
+      'edit-btn',
+      'assets/icons/edit.svg',
+      'Edit task',
       () => {
         if (callbacks.onEdit) callbacks.onEdit(todo.id);
-      },
+      }
     );
 
     // Create delete button
     const deleteBtn = this.createActionButton(
-      "delete-btn",
-      "../src/assets/icons/delete.svg",
-      "Delete task",
+      'delete-btn',
+      'assets/icons/delete.svg',
+      'Delete task',
       () => {
         if (callbacks.onDelete) callbacks.onDelete(todo.id);
-      },
+      }
     );
 
     actionsDiv.appendChild(editBtn);
@@ -170,8 +168,8 @@ export class TodoRenderer {
     li.appendChild(actionsDiv);
 
     // Add drag event listeners
-    li.addEventListener("dragstart", () => this.handleDragStart(li));
-    li.addEventListener("dragend", () => this.handleDragEnd(li));
+    li.addEventListener('dragstart', () => this.handleDragStart(li));
+    li.addEventListener('dragend', () => this.handleDragEnd(li));
 
     return li;
   }
@@ -185,17 +183,17 @@ export class TodoRenderer {
    * @returns {HTMLElement} - Button element
    */
   createActionButton(className, iconSrc, ariaLabel, onClick) {
-    const button = document.createElement("button");
+    const button = document.createElement('button');
     button.className = `todo-btn ${className}`;
-    button.setAttribute("aria-label", ariaLabel);
+    button.setAttribute('aria-label', ariaLabel);
 
-    const img = document.createElement("img");
+    const img = document.createElement('img');
     img.src = iconSrc;
-    img.className = "icon";
-    img.alt = "";
+    img.className = 'icon';
+    img.alt = '';
 
     button.appendChild(img);
-    button.addEventListener("click", onClick);
+    button.addEventListener('click', onClick);
 
     return button;
   }
@@ -205,7 +203,7 @@ export class TodoRenderer {
    * @param {Function} onReorder - Callback for reorder event
    */
   setupDragAndDrop(onReorder) {
-    this.todoList.addEventListener("dragover", (e) => {
+    this.todoList.addEventListener('dragover', e => {
       e.preventDefault();
       const afterElement = this.getDragAfterElement(e.clientY);
 
@@ -216,11 +214,9 @@ export class TodoRenderer {
       }
     });
 
-    this.todoList.addEventListener("drop", () => {
+    this.todoList.addEventListener('drop', () => {
       if (onReorder) {
-        const orderedIds = Array.from(this.todoList.children).map((li) =>
-          parseInt(li.dataset.id),
-        );
+        const orderedIds = Array.from(this.todoList.children).map(li => parseInt(li.dataset.id));
         onReorder(orderedIds);
       }
     });
@@ -232,7 +228,7 @@ export class TodoRenderer {
    */
   handleDragStart(element) {
     this.draggedItem = element;
-    setTimeout(() => element.classList.add("dragging"), 0);
+    setTimeout(() => element.classList.add('dragging'), 0);
   }
 
   /**
@@ -240,7 +236,7 @@ export class TodoRenderer {
    * @param {HTMLElement} element - Dragged element
    */
   handleDragEnd(element) {
-    element.classList.remove("dragging");
+    element.classList.remove('dragging');
     this.draggedItem = null;
   }
 
@@ -250,9 +246,7 @@ export class TodoRenderer {
    * @returns {HTMLElement|null} - Element to insert after
    */
   getDragAfterElement(y) {
-    const draggableElements = [
-      ...this.todoList.querySelectorAll(".todo-item:not(.dragging)"),
-    ];
+    const draggableElements = [...this.todoList.querySelectorAll('.todo-item:not(.dragging)')];
 
     return draggableElements.reduce(
       (closest, child) => {
@@ -265,7 +259,7 @@ export class TodoRenderer {
           return closest;
         }
       },
-      { offset: Number.NEGATIVE_INFINITY },
+      { offset: Number.NEGATIVE_INFINITY }
     ).element;
   }
 
@@ -273,6 +267,6 @@ export class TodoRenderer {
    * Clear the todo list
    */
   clear() {
-    this.todoList.innerHTML = "";
+    this.todoList.innerHTML = '';
   }
 }

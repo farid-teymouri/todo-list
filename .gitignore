@@ -62,4 +62,4 @@ temp/
 # Misc
 .sass-cache/
 .eslintcache
-.prettiercache
+.prettiercachepublic/assets/
