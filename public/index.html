@@ -8,10 +8,7 @@
       content="Todo List Application - A professional vanilla JavaScript project"
     />
     <meta name="author" content="Your Name" />
-    <meta
-      name="keywords"
-      content="todo, javascript, vanilla js, portfolio, pwa"
-    />
+    <meta name="keywords" content="todo, javascript, vanilla js, portfolio, pwa" />
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Todo List App" />
@@ -28,7 +25,7 @@
     />
 
     <!-- Manifest for PWA -->
-    <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="./manifest.json" />
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../src/css/main.css" />
@@ -41,16 +38,8 @@
       <header class="header">
         <h1>Todo List</h1>
         <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-          <img
-            src="../src/assets/icons/sun.svg"
-            alt="Light mode"
-            class="icon sun-icon"
-          />
-          <img
-            src="../src/assets/icons/moon.svg"
-            alt="Dark mode"
-            class="icon moon-icon"
-          />
+          <img src="../src/assets/icons/sun.svg" alt="Light mode" class="icon sun-icon" />
+          <img src="../src/assets/icons/moon.svg" alt="Dark mode" class="icon moon-icon" />
         </button>
       </header>
 
@@ -85,9 +74,7 @@
 
       <!-- Actions -->
       <div class="actions-section">
-        <button id="clearCompleted" class="clear-btn" disabled>
-          Clear completed tasks
-        </button>
+        <button id="clearCompleted" class="clear-btn" disabled>Clear completed tasks</button>
         <button id="searchBtn" class="search-btn" aria-label="Search tasks">
           <img src="../src/assets/icons/search.svg" alt="Search" class="icon" />
         </button>
@@ -97,11 +84,7 @@
       <div id="searchContainer" class="search-container">
         <div id="searchBar" class="search-bar">
           <div class="search-bar-inner">
-            <img
-              src="../src/assets/icons/search.svg"
-              alt=""
-              class="search-icon"
-            />
+            <img src="../src/assets/icons/search.svg" alt="" class="search-icon" />
             <input
               type="text"
               id="searchInput"
@@ -109,18 +92,10 @@
               placeholder="Search tasks... (Press / to focus)"
               aria-label="Search tasks"
             />
-            <button
-              id="clearSearch"
-              class="clear-search"
-              aria-label="Clear search"
-            >
+            <button id="clearSearch" class="clear-search" aria-label="Clear search">
               <span class="clear-icon">×</span>
             </button>
-            <button
-              id="closeSearch"
-              class="close-search-btn"
-              aria-label="Close search"
-            >
+            <button id="closeSearch" class="close-search-btn" aria-label="Close search">
               <span class="close-icon">ESC</span>
             </button>
           </div>
@@ -134,15 +109,15 @@
     <!-- PWA Support -->
     <script>
       // Register service worker for PWA
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
           navigator.serviceWorker
-            .register("./service-worker.js")
-            .then((registration) => {
-              console.log("ServiceWorker registered:", registration.scope);
+            .register('./service-worker.js')
+            .then(registration => {
+              console.log('ServiceWorker registered:', registration.scope);
             })
-            .catch((error) => {
-              console.log("ServiceWorker registration failed:", error);
+            .catch(error => {
+              console.log('ServiceWorker registration failed:', error);
             });
         });
       }
