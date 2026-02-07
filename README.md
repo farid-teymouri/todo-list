@@ -1,67 +1,77 @@
-# 📝 Todo List Application
+# ⚡ Task Manager JS
 
-A professional, fully-featured todo list application built with vanilla JavaScript. This project demonstrates modern web development best practices including modular architecture, accessibility, responsive design, and performance optimization.
+A production-inspired task management application built with **vanilla JavaScript**, focusing on modular architecture, performance, accessibility, and Progressive Web App standards.
 
-![Todo List Preview](https://raw.githubusercontent.com/farid-teymouri/todo-list/32fc6c6eedfc6f8ea234afeaa2533c1eb1fac881/public/screenshot-1.svg) <br>
-![License](https://img.shields.io/github/license/farid-teymouri/todo-list)
-![GitHub stars](https://img.shields.io/github/stars/farid-teymouri/todo-list)
-![GitHub forks](https://img.shields.io/github/forks/farid-teymouri/todo-list)
-![GitHub issues](https://img.shields.io/github/issues/farid-teymouri/todo-list)
-![GitHub last commit](https://img.shields.io/github/last-commit/farid-teymouri/todo-list)
+This repository is part of **Farid Labs Foundations** — projects designed to strengthen core engineering skills without relying on heavy frameworks.
+
+![Preview](https://raw.githubusercontent.com/farid-teymouri/todo-list/32fc6c6eedfc6f8ea234afeaa2533c1eb1fac881/public/screenshot-1.svg)
+
+![License](https://img.shields.io/github/license/farid-teymouri/task-manager-js)
+![Last Commit](https://img.shields.io/github/last-commit/farid-teymouri/task-manager-js)
+
+---
 
 ## 🌐 Live Demo
 
-Experience the application live on Vercel:
+👉 https://todo-list-sooty-eight-88.vercel.app/
 
-👉 **[https://todo-list-sooty-eight-88.vercel.app/](https://todo-list-sooty-eight-88.vercel.app/)** 👈
+✅ Installable PWA  
+✅ Offline-ready  
+✅ Fully responsive  
+✅ Dark / Light mode
 
-✅ Fully functional PWA  
-✅ Installable on mobile/desktop  
-✅ Works offline with Service Worker  
-✅ Dark/light mode with system detection
+---
 
-## ✨ Features
+## 🧠 Engineering Goals
 
-### Core Functionality
+Unlike typical todo apps, this project emphasizes **software design fundamentals**:
 
-- ✅ **Task Management**: Add, edit, delete, and complete tasks
-- 🎯 **Drag & Drop**: Reorder tasks with intuitive drag and drop
-- 🔍 **Search**: Real-time search through all tasks
-- 📊 **Filtering**: View all, active, or completed tasks
-- 💾 **Persistence**: All data saved to localStorage automatically
+- Writing framework-independent JavaScript
+- Structuring scalable front-end architecture
+- Applying separation of concerns
+- Building resilient UI behavior
+- Prioritizing accessibility
+- Optimizing runtime performance
+
+> The objective is not complexity — it's **clarity, maintainability, and correctness**.
+
+---
+
+## ✨ Core Capabilities
+
+### Task Lifecycle
+
+- Create, edit, delete, and complete tasks
+- Drag & drop reordering
+- Real-time search
+- Smart filtering (all / active / completed)
+- Persistent storage via localStorage
 
 ### User Experience
 
-- 🎨 **Dark/Light Mode**: Toggle between themes with system preference detection
-- 📱 **Fully Responsive**: Perfect on mobile, tablet, and desktop
-- ⌨️ **Keyboard Shortcuts**: Fast navigation with keyboard
-- 🍞 **Undo Feature**: Accidentally deleted a task? Undo it!
-- 📢 **Toast Notifications**: Real-time feedback for all actions
+- System-aware dark/light theme
+- Keyboard-first navigation
+- Toast feedback
+- Undo deletion flow
+- Fully responsive layout
 
-### Technical Excellence
+### Technical Highlights
 
-- ♿ **Accessibility**: Full ARIA support, keyboard navigation, screen reader friendly
-- ⚡ **Performance**: Optimized rendering, debounced search, efficient DOM updates
-- 🧪 **Modular Architecture**: Clean separation of concerns
-- 🔒 **Security**: XSS protection, input sanitization
-- 📦 **PWA Ready**: Install as a native app on any device
-- 🌐 **Offline Support**: Works without internet connection
+- Modular ES6 architecture
+- Debounced search for performance
+- XSS-safe rendering
+- Offline support via Service Worker
+- PWA installability
+- Accessible UI (ARIA-compliant)
 
-## 🎯 Tech Stack
+---
 
-| Technology             | Purpose                                          |
-| ---------------------- | ------------------------------------------------ |
-| **Vanilla JavaScript** | ES6+ modules, no frameworks                      |
-| **CSS3**               | Custom properties, animations, responsive design |
-| **SVG**                | Scalable vector icons                            |
-| **localStorage**       | Client-side data persistence                     |
-| **Service Worker**     | Offline functionality, PWA                       |
-| **Web Manifest**       | App installation capability                      |
+## 🏗 Architecture Overview
 
-## 📁 Project Structure
+The project follows a modular structure inspired by production systems.
 
 ```bash
-todo-list/
+task-manager-js/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml          # CI/CD for GitHub Pages
@@ -121,6 +131,33 @@ todo-list/
 └── README.md                   # This file
 ```
 
+### Design Principles Applied
+
+- Separation of Concerns
+- Modular Design
+- Single Responsibility
+- Predictable State Handling
+- Progressive Enhancement
+
+This structure keeps the codebase easy to reason about and extend.
+
+---
+
+## 🛠 Tech Stack
+
+| Technology        | Purpose                  |
+| ----------------- | ------------------------ |
+| JavaScript (ES6+) | Application architecture |
+| CSS3              | Responsive, themeable UI |
+| Service Worker    | Offline capability       |
+| Web Manifest      | PWA installation         |
+| localStorage      | Client persistence       |
+| SVG               | Lightweight iconography  |
+
+> No frameworks. No abstractions. Just the platform.
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -172,174 +209,49 @@ npm run dev
 npm run build
 ```
 
-This creates an optimized dist/ folder ready for deployment.
+## 🎯 Why Vanilla JavaScript?
 
-## 🎹 Keyboard Shortcuts
+#### Frameworks evolve quickly.
 
-| Shortcut       | Action                            |
-| -------------- | --------------------------------- |
-| `Ctrl/Cmd + E` | Focus on input field              |
-| `Ctrl/Cmd + D` | Toggle dark/light mode            |
-| `Enter`        | Add task or confirm search        |
-| `Escape`       | Clear input or close search modal |
-| `Click + Drag` | Reorder tasks                     |
+#### Fundamentals do not.
 
-## 📱 PWA Installation
+#### This project reinforces:
 
-This app is a Progressive Web App (PWA). You can install it on your device:
+- DOM mastery
+- Browser APIs
+- Event systems
+- Performance awareness
+- Architectural thinking
+- Engineers who understand the platform build better systems — regardless of stack.
 
-### On Mobile (Chrome/Android):
+## 📱 Progressive Web App
 
-1. Open the app in Chrome <br>
-2. Tap the ⋮ menu button <br>
-3. Select "Install app" or "Add to Home screen" <br>
-4. The app will be installed like a native application! <br>
+#### Install it like a native application:
 
-### On Desktop (Chrome):
-
-1. Open the app in Chrome <br>
-2. Click the install icon (⊕) in the address bar <br>
-3. Click "Install" <br>
-4. The app opens in a separate window without browser chrome <br>
-
-### On iOS (Safari):
-
-1. Open the app in Safari
-2. Tap the Share button
-3. Select "Add to Home Screen"
-4. Tap "Add"
-
-## 🌟 Features in Detail
-
-### Task Management
-
-- Add Tasks: Type in the input field and press Enter or click the + button
-- Complete Tasks: Check the checkbox to mark as complete
-- Edit Tasks: Click the edit (✏️) button to modify task text
-- Delete Tasks: Click the delete (🗑️) button to remove a task
-- Reorder Tasks: Drag and drop tasks to change their order
-
-### Search & Filter
-
-- Search: Click the search icon and type to filter tasks by text
-- Filter All: Show all tasks (default)
-- Filter Active: Show only incomplete tasks
-- Filter Completed: Show only completed tasks
-
-### Dark/Light Mode
-
-- Toggle between dark and light themes using the sun/moon button
-- Automatically detects system preference on first visit
-- Theme preference is saved and persists across sessions
-
-### Undo Feature
-
-- When you delete a task, you have 5 seconds to undo
-- A confirmation dialog appears asking if you want to restore the task
-- This prevents accidental deletions
-
-### Offline Support
-
-- Thanks to the Service Worker, the app works offline
-- Your tasks are saved to localStorage, so they persist
-- The app can be used without an internet connection
-
-## 🎨 Customization
-
-### Changing Colors
-
-#### Edit `src/css/_variables.css`:
-
-```css
-:root {
-  --accent-primary: #667eea; /* Change this color */
-  --accent-primary-hover: #5568d3; /* And this */
-  /* ... other colors */
-}
-```
-
-### Adding New Features
-
-#### The modular architecture makes it easy to extend:
-
-2. Add new UI components: Create files in `src/js/ui/`
-3. Add new core features: Create files in `src/js/core/`
-4. Add new utilities: Create files in `src/js/utils/`
-5. Add new icons: Place SVG files in `src/assets/icons/`
-
-### Modifying Keyboard Shortcuts
-
-#### Edit `src/js/core/TodoApp.js` in the `setupKeyboardShortcuts()` method.
-
-## 🔒 Security Features
-
-- XSS Protection: All user input is sanitized before rendering
-- Input Validation: Todo text is validated before saving
-- Secure Storage: Data validation for localStorage operations
-- Content Security Policy: Recommended CSP headers in netlify.toml
+- Works offline
+- Launches in standalone mode
+- Cached assets
+- Fast load times
 
 ## ♿ Accessibility
 
-### This app follows WCAG 2.1 AA standards:
+#### Built with inclusive design in mind:
 
-- ✅ Full keyboard navigation support
-- ✅ ARIA labels and roles on all interactive elements
-- ✅ Proper focus management
-- ✅ Sufficient color contrast in both themes
-- ✅ Screen reader friendly
-- ✅ Reduced motion support for users with vestibular disorders
+- ✅ Keyboard navigable
+- ✅ Screen-reader friendly
+- ✅ Strong color contrast
+- ✅ Focus management
+- ✅ Reduced motion support
 
-## 📊 Browser Support
+#### Accessibility is not a feature — it's a responsibility.
 
-| Browser     | Version | Support |
-| ----------- | ------- | ------- |
-| **Chrome**  | 90+     | ✅ Full |
-| **Firefox** | 88+     | ✅ Full |
-| **Safari**  | 14+     | ✅ Full |
-| **Edge**    | 90+     | ✅ Full |
-| **Opera**   | 76+     | ✅ Full |
+## 🔒 Security Considerations
 
-## 🤝 Contributing
+- Input sanitization
+- Safe DOM rendering
+- Storage validation
 
-### Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
-## Code Style
-
-- Follow the existing code style
-- Use Prettier for formatting: `npm run format`
-- Write meaningful commit messages
-
-## 🐛 Troubleshooting
-
-### App doesn't load
-
-- Clear browser cache and reload
-- Check browser console for errors
-- Ensure you're using a modern browser
-
-### Tasks not saving
-
-- Check if localStorage is enabled in your browser
-- Clear localStorage: Open DevTools → Application → Local Storage → Clear
-- Check browser storage quota
-
-### Dark mode not working
-
-- Check if JavaScript is enabled
-- Try toggling the theme button manually
-- Clear site data and reload
-
-### PWA not installing
-
-- Ensure you're using HTTPS (or localhost)
-- Make sure manifest.json is accessible
-- Check browser console for Service Worker errors
+#### Even small apps deserve safe defaults.
 
 ## 📄 License
 
